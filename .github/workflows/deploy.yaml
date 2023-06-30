@@ -14,4 +14,4 @@ jobs:
 
       - name: Helm Upgrade
         run: |
-          helm upgrade websocket-server-chart ./ -f ./values.yaml --install --namespace cesi-eats --create-namespace
+          helm upgrade websocket-server-chart ./ -f ./values.yaml --install --namespace cesi-eats --create-namespace --recreate-pods

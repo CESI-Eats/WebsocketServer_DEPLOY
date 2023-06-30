@@ -1,0 +1,10 @@
+app:
+  name: websocket-server
+  namespace: cesi-eats
+  image:
+    repository: ghcr.io/cesi-eats/websocket_server
+    tag: latest
+
+dependencies:
+  lapinou:
+    uri: amqp://rabbitmq-service.cesi-eats.svc.cluster.local:5672

@@ -1,0 +1,17 @@
+name: Deploy - Prod
+
+on:
+  workflow_call:
+      
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: CESI-Eats/WebsocketServer_DEPLOY
+
+      - name: Helm Upgrade
+        run: |
+          helm upgrade websocket-server-chart ./ -f ./values.yaml --install --namespace cesi-eats --create-namespace
